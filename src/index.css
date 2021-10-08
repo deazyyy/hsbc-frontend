@@ -22,3 +22,11 @@ body {
   justify-content: space-between;
   align-items: stretch;
 }
+
+.MuiButtonBase-root:hover{
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+.MuiButtonBase-root > *{
+  text-rendering: optimizeLegibility;
+}

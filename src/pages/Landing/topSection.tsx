@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Navbar from '../../components/LandingPage/navbar';
 import BackgroundTop from '../../assets/LandingAssets/top/top-bg.png';
@@ -39,7 +39,7 @@ const Background = styled.div`
   background-size: 120vw;
   background-repeat: no-repeat;
   background-position: -3rem 10rem;
-
+  transition: background-position 0.8s ease;
   @media screen and (min-width: 1200px) {
     background-position: 0 8vh;
     background-size: 100vw;
@@ -141,7 +141,9 @@ const CardsWrapper = styled.div`
   position: relative;
   margin-top: 3rem;
   margin: 0 auto;
-
+  & > * {
+    text-align: center !important;
+  }
   @media screen and (orientation: landscape) {
     margin-top: 4rem;
   }
@@ -159,9 +161,17 @@ const CardsWrapper = styled.div`
 `;
 
 function TopSection() {
+  const bgref = React.useRef<HTMLDivElement>(null);
+  function onMouseEnterHandler(e) {
+    console.log(e);
+    if (bgref.current) {
+      bgref.current.style.backgroundPositionX = -e.movementX * 10 + 'px';
+      bgref.current.style.backgroundPositionY = -e.movementY * 10 + 'px';
+    }
+  }
   return (
-    <ContainerHeight>
-      <Background />
+    <ContainerHeight onMouseMove={(e) => onMouseEnterHandler(e)}>
+      <Background ref={bgref} />
       <ContainerWidth>
         <Navbar />
         <Headline>

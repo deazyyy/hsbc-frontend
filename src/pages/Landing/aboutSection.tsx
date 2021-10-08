@@ -90,7 +90,7 @@ const MoreTextHeading = styled.p`
 const CardsWrapper = styled.div`
   position: relative;
   margin-top: -10rem;
-
+  text-align: center;
   @media screen and (orientation: landscape) {
     margin-top: -6rem;
   }
@@ -113,9 +113,9 @@ const StyledCard = styled(Card)`
     margin: 1.5rem 0;
   }
 
-  * {
-    text-align: start;
-  }
+  // * {
+  //   text-align: start;
+  // }
 
   p {
     margin-bottom: 3rem;
@@ -127,26 +127,26 @@ function AboutSection() {
     <Container>
       <Background>
         <Headline>An On-Chain Decentralized Bank for Everyone</Headline>
-        <MoreTextHeading>Want to know more?</MoreTextHeading>
+        <MoreTextHeading>Key Features</MoreTextHeading>
       </Background>
       <CardsWrapper>
         <StyledCard
           src={''}
-          title="Decentralized Bank?"
+          title="Decentralized Bank"
           text="HBSC is a decentralized staking protocol or a decentralized bank. It 
           allows users to time deposit their assets and earn interest in a completly 
           permissionless way."
         />
         <StyledCard
           src={''}
-          title="Audited Contract?"
+          title="Audited Contract"
           text="The HBSC Contract has been audited by market-leading professionals.
           This allows us to operate in a safer environment and mitigate the risk of 
           attacks on our users funds."
         />
         <StyledCard
           src={''}
-          title="HBSC Token?"
+          title="HBSC Token"
           text="The HBSC Token is a crypto-currency on the BNB Blockchain. Its total supply is 
           only 10 000 coins making it one of the most scarce asset in the industry.
           It’s the base layer of the HBSC Staking platform and decentralized Bank."

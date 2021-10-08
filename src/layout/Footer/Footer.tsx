@@ -122,7 +122,9 @@ const FooterView = ({ classes }: FooterProps) => {
           <IdentityText>Your Decentralized Banking Partner.</IdentityText>
         </IdentityWrapper>
         <Contactouter>
-          <Text>support@hbsc.finance</Text>
+          <Text>
+            support@hbsc.finance <span>v2.1</span>
+          </Text>
           <SocialWrapper>
             <SocialLink href="/">
               <SocialIcon src={TgIcon} />
